@@ -12,23 +12,23 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/itemGet", produces = "text/plain")
-//    public @ResponseBody String get(){
-//        return itemService.findById();
-//    }
-//
-//    @RequestMapping(method = RequestMethod.POST, value = "/itemSave", produces = "text/plain")
-//    public @ResponseBody String save(){
-//        return itemService.save();
-//    }
-//
-//    @RequestMapping(method = RequestMethod.PUT, value = "/itemUpdate", produces = "text/plain")
-//    public @ResponseBody String update(){
-//        return itemService.update();
-//    }
-//
-//    @RequestMapping(method = RequestMethod.DELETE, value = "/itemDelete", produces = "text/plain")
-//    public @ResponseBody String delete(){
-//        return itemService.delete();
-//    }
+    @RequestMapping(method = RequestMethod.GET, value = "/itemGet", produces = "text/plain")
+    public @ResponseBody String get(){
+        return "ok";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/itemSave", produces = "text/plain")
+    public @ResponseBody String save(){
+        return "ok";
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/itemUpdate", produces = "text/plain")
+    public @ResponseBody String update(){
+        return "ok";
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/itemDelete", produces = "text/plain")
+    public @ResponseBody String delete(){
+        return "ok";
+    }
 }

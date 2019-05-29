@@ -5,7 +5,7 @@ import java.util.List;
 public class Service {
     private long id;
     private String name;
-    private List<String> paramsToCall;
+    private List paramsToCall;
 
     public long getId() {
         return id;
@@ -23,11 +23,11 @@ public class Service {
         this.name = name;
     }
 
-    public List<String> getParamsToCall() {
+    public List getParamsToCall() {
         return paramsToCall;
     }
 
-    public void setParamsToCall(List<String> paramsToCall) {
+    public void setParamsToCall(List paramsToCall) {
         this.paramsToCall = paramsToCall;
     }
 }

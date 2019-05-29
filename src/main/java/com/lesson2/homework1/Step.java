@@ -1,13 +1,14 @@
 package com.lesson2.homework1;
 
 import java.util.List;
+import java.util.Map;
 
 public class Step {
     private long id;
     private Service serviceFrom;
     private Service serviceTo;
-    private List<String> paramsServiceFrom;
-    private List<String> paramsServiceTo;
+    private Map paramsServiceFrom;
+    private Map paramsServiceTo;
 
     public long getId() {
         return id;
@@ -33,19 +34,19 @@ public class Step {
         this.serviceTo = serviceTo;
     }
 
-    public List<String> getParamsServiceFrom() {
+    public Map getParamsServiceFrom() {
         return paramsServiceFrom;
     }
 
-    public void setParamsServiceFrom(List<String> paramsServiceFrom) {
+    public void setParamsServiceFrom(Map paramsServiceFrom) {
         this.paramsServiceFrom = paramsServiceFrom;
     }
 
-    public List<String> getParamsServiceTo() {
+    public Map getParamsServiceTo() {
         return paramsServiceTo;
     }
 
-    public void setParamsServiceTo(List<String> paramsServiceTo) {
+    public void setParamsServiceTo(Map paramsServiceTo) {
         this.paramsServiceTo = paramsServiceTo;
     }
 }

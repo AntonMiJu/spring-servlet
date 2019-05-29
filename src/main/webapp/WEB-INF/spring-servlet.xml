@@ -11,4 +11,12 @@
 
     <bean id = "OrderService" class="com.lesson2.OrderService"></bean>
     <bean id = "OrderDAO" class="com.lesson2.OrderDAO"></bean>
+
+
+    <bean id = "Route" class="com.lesson2.homework1.Route"></bean>
+    <bean id = "Service" class="com.lesson2.homework1.Service"></bean>
+    <bean id = "Step" class="com.lesson2.homework1.Step"></bean>
+
+    <bean id = "itemService" class="com.lesson2.homework2.service.ItemService"></bean>
+    <bean id = "itemDAO" class="com.lesson2.homework2.dao.ItemDAO"></bean>
 </beans>

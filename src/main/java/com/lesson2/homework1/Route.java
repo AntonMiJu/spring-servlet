@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Route {
     private String id;
-    private List<Step> steps;
+    private List steps;
 
     public String getId() {
         return id;
@@ -14,11 +14,11 @@ public class Route {
         this.id = id;
     }
 
-    public List<Step> getSteps() {
+    public List getSteps() {
         return steps;
     }
 
-    public void setSteps(List<Step> steps) {
+    public void setSteps(List steps) {
         this.steps = steps;
     }
 }

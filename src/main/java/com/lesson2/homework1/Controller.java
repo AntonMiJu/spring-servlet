@@ -10,7 +10,7 @@ public class Controller {
     @Autowired
     private Step step;
 
-    public void callByBean(){
+    public String callByBean(){
         route.getId();
         route.getSteps();
 
@@ -23,5 +23,7 @@ public class Controller {
         step.getServiceTo();
         step.getParamsServiceFrom();
         step.getParamsServiceTo();
+
+        return "ok";
     }
 }
