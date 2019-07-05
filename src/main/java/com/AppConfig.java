@@ -1,4 +1,4 @@
-package com.config;
+package com;
 
 import com.lesson3.homework.dao.FileDAO;
 import com.lesson3.homework.service.FileService;
@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @EnableWebMvc
 @Configuration
-public class CustomDispatcherConfig {
+public class AppConfig {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(){
