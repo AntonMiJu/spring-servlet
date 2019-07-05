@@ -1,9 +1,11 @@
 package com.lesson3.homework.dao;
 
 import com.lesson3.homework.entity.Storage;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class StorageDAO extends GeneralDAO<Storage> {
     private static final String delete = "DELETE FROM STORAGES WHERE ID = ?";
     private static final String getAll = "SELECT * FROM STORAGES";

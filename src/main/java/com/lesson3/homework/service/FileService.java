@@ -5,16 +5,14 @@ import com.lesson3.homework.entity.File;
 import com.lesson3.homework.entity.Storage;
 import com.lesson3.homework.exception.WrongFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FileService {
-    private FileDAO fileDAO;
-
     @Autowired
-    public FileService(FileDAO fileDAO) {
-        this.fileDAO = fileDAO;
-    }
+    private FileDAO fileDAO;
 
     public List<File> findFilesByStorage(Storage storage) {
         return fileDAO.findFileByStorage(storage);
