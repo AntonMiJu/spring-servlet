@@ -1,8 +1,11 @@
 package com.lesson6.homework.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
+@Entity
+@Table(name = "FLIGHTS")
 public class Flight {
     private Long id;
     private Plane plane;
@@ -11,26 +14,36 @@ public class Flight {
     private String cityFrom;
     private String cityTo;
 
+    @Id
+    @SequenceGenerator(name = "FL_SEQ", sequenceName = "SEQUENCE_ID", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FL_SEQ")
+    @Column(name = "ID")
     public Long getId() {
         return id;
     }
 
+    @JoinColumn(name = "PLANE_ID")
+    @OneToOne(cascade = CascadeType.ALL)
     public Plane getPlane() {
         return plane;
     }
 
+    //TODO MANY TO MANY ANNOTATION
     public ArrayList<Passenger> getPassenger() {
         return passenger;
     }
 
+    @Column(name = "DATE_FLIGHT")
     public Date getDateFlight() {
         return dateFlight;
     }
 
+    @Column(name = "CITY_FROM")
     public String getCityFrom() {
         return cityFrom;
     }
 
+    @Column(name = "CITY_TO")
     public String getCityTo() {
         return cityTo;
     }

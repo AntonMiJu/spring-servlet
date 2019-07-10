@@ -7,11 +7,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 @Transactional
 public class PlaneDAO {
-    private static final String oldPlanes = "SELECT * FROM PLANES WHERE DATEDIFF(YEAR, DATE_PRODUCED, GETDATE()) > 20";
+    private static final String oldPlanes = "SELECT * FROM PLANES WHERE TO_CHAR(DATE_PRODUCED, 'YYYY') < (TO_CHAR(SYSDATE, 'YYYY') - 20);";
+    private static final String regularPlanes = "SELECT * FROM PLANES WHERE PLANES.ID IN (" +
+            "SELECT PLANE_ID FROM (" +
+            "SELECT COUNT(ID) AS RES,PLANE_ID FROM FLIGHTS WHERE TO_CHAR(FLIGHTS.DATE_FLIGHT, 'YYYY') = ? GROUP BY PLANE_ID)" +
+            "WHERE RES > 300);";
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -36,7 +41,11 @@ public class PlaneDAO {
         return plane;
     }
 
-    public ArrayList<Plane> oldPlanes(){
-        return (ArrayList<Plane>) entityManager.createNativeQuery(oldPlanes, Plane.class).getResultList();
+    public List<Plane> oldPlanes(){
+        return entityManager.createNativeQuery(oldPlanes, Plane.class).getResultList();
+    }
+
+    public List<Plane> regularPlanes(int year){
+        return entityManager.createNativeQuery(regularPlanes,Plane.class).setParameter(1,year).getResultList();
     }
 }

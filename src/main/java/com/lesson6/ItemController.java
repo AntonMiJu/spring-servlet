@@ -32,10 +32,10 @@ public class ItemController {
             item = objectMapper.readValue(inputStream, Item.class);
         } catch (Exception e){
             System.err.println("DoPost failed.");
-            return e.getMessage();
+            return "400: "+e.getMessage();
         }
         if (item == null)
-            return "Can't find item";
+            return "400: Can't find item";
         itemService.save(item);
         return "ok";
     }
@@ -53,10 +53,10 @@ public class ItemController {
             item = objectMapper.readValue(inputStream, Item.class);
         } catch (Exception e){
             System.err.println("DoPut failed.");
-            return e.getMessage();
+            return "400: "+e.getMessage();
         }
         if (item == null)
-            return "Can't find item";
+            return "400: Can't find item";
         itemService.update(item);
         return "ok";
     }
