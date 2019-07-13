@@ -14,8 +14,8 @@ public class ItemDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public Item get(Long id){
-        return entityManager.find(Item.class,id);
+    public Item get(Long id) {
+        return entityManager.find(Item.class, id);
     }
 
     public Item save(Item item) {

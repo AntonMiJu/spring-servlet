@@ -3,6 +3,7 @@ package com;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -24,6 +25,7 @@ import javax.sql.DataSource;
 @EnableWebMvc
 @EnableTransactionManagement
 @Configuration
+@ComponentScan(basePackages = {"com.lesson7","com.lesson1"})
 public class AppConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -68,9 +70,9 @@ public class AppConfig implements WebMvcConfigurer {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("LINK");
-        dataSource.setUsername("NAME");
-        dataSource.setPassword("PASS");
+        dataSource.setUrl("jdbc:oracle:thin:@gromcode-lessons.cugxfi8tgmxw.us-east-2.rds.amazonaws.com:1521:ORCL");
+        dataSource.setUsername("main");
+        dataSource.setPassword("Anton4ik147536951");
         return dataSource;
     }
 
