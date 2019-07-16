@@ -70,9 +70,9 @@ public class AppConfig implements WebMvcConfigurer {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:oracle:thin:@gromcode-lessons.cugxfi8tgmxw.us-east-2.rds.amazonaws.com:1521:ORCL");
-        dataSource.setUsername("main");
-        dataSource.setPassword("Anton4ik147536951");
+        dataSource.setUrl("link");
+        dataSource.setUsername("username");
+        dataSource.setPassword("pass");
         return dataSource;
     }
 
